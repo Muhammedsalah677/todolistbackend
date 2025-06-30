@@ -3,10 +3,17 @@ const app = express();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const cors = require('cors');  
 const port = process.env.port || 8080;
 const MONGOURL = process.env.MONGOURL;
 
 app.use(express.json());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 
 mongoose.connect(MONGOURL);
 
