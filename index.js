@@ -15,10 +15,7 @@ app.use(
 );
 
 // MongoDB Connection
-mongoose.connect(MONGOURL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(MONGOURL)
 
 // Schemas
 const userSchema = new mongoose.Schema({
